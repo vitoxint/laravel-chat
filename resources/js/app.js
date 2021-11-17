@@ -32,19 +32,20 @@ message_form .addEventListener('submit' , function(e){
         method : 'post',
         url: '/send-message',
         data: {
+            _token : "{{ csrf_token() }}",
             username: username_input.value,
             message: message_input.value
         }
             
     }
 
-    window.axios( options );
+    window.axios( options )
 
-    console.log(username_input.value);
-    console.log(message_input.value);
+    console.log(username_input.value)
+    console.log(message_input.value)
 })
 
 window.Echo.channel('chat')
 .listen('.message' , (e) => {
-    message_el.innerHTML += '<div class="message"> <strong>' + e.username + ':</strong>' + e.message + '</div>';
+    message_el.innerHTML += '<div class="message"> <strong>' + e.username + ':</strong>' + e.message + '</div>'
 })
