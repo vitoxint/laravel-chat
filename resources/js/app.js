@@ -32,7 +32,6 @@ message_form .addEventListener('submit' , function(e){
         method : 'post',
         url: '/send-message',
         data: {
-            _token : "{{ csrf_token() }}",
             username: username_input.value,
             message: message_input.value
         }

@@ -16,7 +16,7 @@
 
         <div id="messages"></div>
         <form id="message_form" >
-            @csrf
+            
             <input type="text" name="message" id="message_input" placeholder="enter a message" >
             <button type="submit" id="message_send">Send</button>
         </form>
@@ -25,5 +25,6 @@
 
 
     <script src="./js/app.js"></script>
+    <script>window.Laravel = {csrfToken: '{{ csrf_token() }}'}</script>
 </body>
 </html>
