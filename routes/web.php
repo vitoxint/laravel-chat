@@ -21,6 +21,10 @@ Route::get('/', function () {
 
 Route::post('/send-message' , function( Request $request ){
 
+    $token = $request->session()->token();
+
+    $token = csrf_token();
+
     event(
         new Message(
             $request->input('username'),
