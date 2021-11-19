@@ -25,6 +25,6 @@
 
 
     <script src="./js/app.js"></script>
-    <script>window.Laravel = {csrfToken: '{{ csrf_token() }}'}</script>
+    
 </body>
 </html>
